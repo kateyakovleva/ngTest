@@ -1,0 +1,56 @@
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 430px;
+
+  .container-checkbox1 {
+    @include flex-row;
+    width: 49%;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .input-checkbox {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+  }
+
+
+  .checkbox-content {
+    display: flex;
+    text-align: start;
+    width: 200px;
+
+
+    &:before {
+      margin-right: 10px;
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: solid 1px #C3C3C3;
+      border-radius: 3px;
+    }
+  }
+
+  .input-checkbox:checked + .checkbox-content {
+    &:before {
+      background-color: #FFE783;
+    }
+
+    &:after {
+      content: "✓";
+      position: absolute;
+      left: 5px;
+    }
+  }
+}

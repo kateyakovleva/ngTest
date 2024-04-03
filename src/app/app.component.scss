@@ -1,0 +1,111 @@
+@import "@ng-select/ng-select/scss/material.theme";
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.app {
+  font-family: 'PT Sans', sans-serif;
+  color: #000000;
+  padding: 40px 0 0 80px;
+}
+
+.container {
+  @include flex-column;
+  align-items: start;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.elementContainer {
+  @include flex-row;
+  align-items: center;
+  justify-content: start;
+  width: 720px;
+  margin: 10px 0;
+}
+
+h1 {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 41px;
+  line-height: 53.05px;
+}
+
+label {
+  width: 250px;
+  min-width: 250px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  padding-block: 0;
+  padding-inline: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+input {
+  height: 44px;
+  border: 1px solid #C3C3C3;
+  border-radius: 3px;
+  outline: none;
+  padding: 0 0 0 15px;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 500;
+  font-style: normal;
+  width: 100%;
+  max-width: 283px;
+}
+
+.red-star {
+  color: #ff0000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.button-send {
+  width: 139px;
+  height: 52px;
+  border-radius: 3px;
+  background-color: #FFE783 !important;
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  margin-left: 250px;
+  margin-top: 20px;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  &:active {
+    color: rgba(0, 0, 0);
+  }
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+
+

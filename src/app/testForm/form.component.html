@@ -1,0 +1,21 @@
+<form (submit)="submit($event)">
+  @for (field of fields; track field) {
+    @switch (field.type) {
+      @case ("text") {
+        <app-input [field]="field"/>
+      }
+      @case ("select") {
+        <app-select [field]="field"/>
+      }
+      @case ("number") {
+        <app-number [field]="field"/>
+      }
+      @case ("checkbox") {
+        <app-checkbox [field]="field"/>
+      }
+    }
+  }
+
+  <button class="button-send">Отправить</button>
+</form>
+

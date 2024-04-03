@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
+import {FormComponent} from "./testForm/form.component";
+import {formFields} from "../testData/generate.json";
+import {IFormItem} from "../types/form";
 
 @Component({
-  selector: 'app-root',
+  selector: "my-app",
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [
+    FormComponent
+  ],
+  styleUrls: ['./app.component.scss']
+
 })
 export class AppComponent {
-  title = 'dsds';
+
+  fields: IFormItem[] = formFields;
+
 }

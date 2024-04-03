@@ -1,0 +1,8 @@
+<div class="elementContainer">
+  <label>{{ field?.label }}<span *ngIf="field?.required" class="red-star">*</span></label>
+  <input [value]="age" class="input-number" type="number"/>
+  <div class="button-number">
+    <button (click)="increase()" class="button-down" type="button"></button>
+    <button (click)="decrease()" class="button-up" type="button"></button>
+  </div>
+</div>

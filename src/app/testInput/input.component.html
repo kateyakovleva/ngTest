@@ -1,0 +1,24 @@
+<div class="elementContainer">
+  <label>{{ field?.label }}<span *ngIf="field?.required" class="red-star">*</span></label>
+  <div class="column">
+    <div *ngFor="let item of items; let i = index" class="row">
+      <input
+        [attr.name]="field?.name"
+        [attr.placeholder]="field?.placeholder"
+        [attr.required]="field?.required ? true : null"
+        [id]="item"
+        class="input-name"
+        type="text"/>
+      <button (click)="removeField(i)" *ngIf="field?.isMulti && items.length > 1" class="button-university">
+        <div class="circle-no"></div>
+      </button>
+      <button (click)="addField()" *ngIf="field?.isMulti && items.length - 1 === i" class="button-university">
+        <div class="circle"></div>
+        <div>Добавить еще</div>
+      </button>
+    </div>
+  </div>
+</div>
+<div *ngIf="field?.description" class="sub-text">{{ field?.description }}</div>
+
+

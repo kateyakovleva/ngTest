@@ -1,0 +1,21 @@
+<div class="elementContainer">
+  <label>{{ field?.label }}</label>
+  <div class="container-checkbox">
+    <div *ngFor="let skill of field?.choices; let i = index" class="container-checkbox1">
+      <input
+        (change)="checkSkill($event)"
+        [checked]="allChecked"
+        [name]="field?.name+'[]'"
+        [value]="skill.value"
+        class="input-checkbox"
+        id="{{id}}-{{i}}"
+        type="checkbox"
+      />
+      <label class="checkbox-content" for="{{id}}-{{i}}">{{ skill.label }}</label>
+    </div>
+    <div class="container-checkbox1">
+      <input (change)="selectAll($event)" [checked]="all" class="input-checkbox" id="{{id}}-all" type="checkbox"/>
+      <label class="checkbox-content" for="{{id}}-all"><b>Выделить все</b></label>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="elementContainer">
+  <label>{{ field?.label }}<span *ngIf="field?.required" class="red-star">*</span></label>
+  <ng-select
+    [inputAttrs]="{name: field?.name || '' }"
+    [items]="field?.choices || []"
+    [ngModel]="selected"
+  />
+</div>
+
